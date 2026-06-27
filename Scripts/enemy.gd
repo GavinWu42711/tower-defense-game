@@ -42,7 +42,15 @@ func _process(delta: float) -> void:
 			
 		else:
 			move(delta)
-			
+
+#Take damage from a projectile/tower
+func take_damage(damage:int) -> void:
+	health -= damage
+	
+	#Prevent potential edge cases
+	if (health < 0):
+		health = 0
+
 #Deals damage to the player
 func deal_damage() -> void:
 	Global.lose_hp.emit(damage)
