@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 	target_enemy()
 	
 	#Attack the enemy if possible
+	attack_enemy()
 	
 #Function responsible for instantiating bullets or any other attack processes. 
 #Should be overwritten by the child class
