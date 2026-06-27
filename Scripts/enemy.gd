@@ -34,16 +34,19 @@ func _process(delta: float) -> void:
 		if (is_path_finished(end_offset)):
 			#Stop the enemy from moving or doing other checks
 			is_alive = false
-			
+		
 			#Deal damage to the player
+			deal_damage()
 			
-			#Kill the enemy
 			die()
 			
 		else:
 			move(delta)
 			
-	
+#Deals damage to the player
+func deal_damage() -> void:
+	Global.lose_hp.emit(damage)
+
 #Check if the enemy is at the end of the track
 func is_path_finished(offset: float) -> bool:
 	if progress_ratio >= 1 - offset:

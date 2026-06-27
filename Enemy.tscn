@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bjt7cxo6ntx86"]
+
+[ext_resource type="Script" uid="uid://cm1b4mdos3v4s" path="res://enemy.gd" id="1_tt7e2"]
+[ext_resource type="Texture2D" uid="uid://cuth1pabn42ae" path="res://Assets/icon.svg" id="2_s7bn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7bn3"]
+size = Vector2(130, 127)
+
+[node name="PathFollow2D" type="PathFollow2D" unique_id=202032653 node_paths=PackedStringArray("hitbox")]
+script = ExtResource("1_tt7e2")
+health = 10
+damage = 10
+speed = 100.0
+hitbox = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1287931396]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=239142843]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_s7bn3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1893083054]
+texture = ExtResource("2_s7bn3")

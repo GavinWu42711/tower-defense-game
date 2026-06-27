@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dqf8jmvnmepbx"]
 
+[ext_resource type="PackedScene" uid="uid://bjt7cxo6ntx86" path="res://Enemy.tscn" id="1_iukft"]
+
 [sub_resource type="GDScript" id="GDScript_cg2ps"]
 script/source = "extends Node2D
 
@@ -15,5 +17,19 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="Curve2D" id="Curve2D_gl6un"]
+bake_interval = 50.46
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 122, 384, 0, 0, 0, 0, 537, 180, 0, 0, 0, 0, 870, 222, 0, 0, 0, 0, 977, 496)
+}
+point_count = 4
+
 [node name="Node2D" type="Node2D" unique_id=1108979053]
 script = SubResource("GDScript_cg2ps")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1258785838]
+curve = SubResource("Curve2D_gl6un")
+
+[node name="PathFollow2D" parent="Path2D" unique_id=202032653 instance=ExtResource("1_iukft")]
+position = Vector2(122, 384)
+rotation = -0.45687786
