@@ -1,6 +1,19 @@
 [gd_scene format=3 uid="uid://dqf8jmvnmepbx"]
 
-[ext_resource type="Script" uid="uid://ba8u7m4rtbps8" path="res://Scenes/gam.gd" id="1_iukft"]
+[sub_resource type="GDScript" id="GDScript_cg2ps"]
+script/source = "extends Node2D
+
+#testing
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="Node2D" type="Node2D" unique_id=1108979053]
-script = ExtResource("1_iukft")
+script = SubResource("GDScript_cg2ps")
