@@ -5,7 +5,7 @@ extends PathFollow2D
 class_name Enemy
 
 #Usually enemies can be assumed to be spawning at the start of the track
-var start_pos:float = 0
+@export var start_pos:float = 0
 @export var end_offset:float = 0
 @export var health:int
 @export var damage:int

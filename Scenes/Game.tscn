@@ -35,5 +35,24 @@ curve = SubResource("Curve2D_gl6un")
 position = Vector2(122, 384)
 rotation = -0.45687786
 
+[node name="PathFollow2D2" parent="Path2D" unique_id=1993763882 instance=ExtResource("1_iukft")]
+position = Vector2(166.33347, 362.20715)
+rotation = -0.4568779
+progress = 50.0
+start_pos = 50.0
+
+[node name="PathFollow2D3" parent="Path2D" unique_id=1470013018 instance=ExtResource("1_iukft")]
+position = Vector2(211.4231, 340.04263)
+rotation = -0.4568779
+progress = 100.0
+start_pos = 100.0
+
+[node name="PathFollow2D4" parent="Path2D" unique_id=1627900059 instance=ExtResource("1_iukft")]
+position = Vector2(256.52164, 317.8737)
+rotation = -0.45687786
+progress = 150.0
+start_pos = 150.0
+
 [node name="Node2D" parent="." unique_id=1494701561 instance=ExtResource("2_gl6un")]
 position = Vector2(567, 298)
+targeting = "CLOSE"
