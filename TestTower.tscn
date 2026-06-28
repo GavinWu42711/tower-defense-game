@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c8y81gt03j8cx"]
+
+[ext_resource type="Script" uid="uid://c4lau4uuogfym" path="res://test_tower.gd" id="1_v7itp"]
+[ext_resource type="Texture2D" uid="uid://cuth1pabn42ae" path="res://Assets/icon.svg" id="2_5vypv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnk6h"]
+size = Vector2(250, 295)
+
+[node name="Node2D" type="Node2D" unique_id=1494701561 node_paths=PackedStringArray("attack_hitbox")]
+script = ExtResource("1_v7itp")
+attack_speed = 1.0
+attack_hitbox = NodePath("Area2D")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=831976052]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1219120444]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_vnk6h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=572042440]
+texture = ExtResource("2_5vypv")

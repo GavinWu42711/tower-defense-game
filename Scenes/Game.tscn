@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dqf8jmvnmepbx"]
 
-[ext_resource type="PackedScene" uid="uid://bjt7cxo6ntx86" path="res://Enemy.tscn" id="1_iukft"]
+[ext_resource type="PackedScene" uid="uid://bjt7cxo6ntx86" path="res://Scenes/Enemy.tscn" id="1_iukft"]
+[ext_resource type="PackedScene" uid="uid://c8y81gt03j8cx" path="res://TestTower.tscn" id="2_gl6un"]
 
 [sub_resource type="GDScript" id="GDScript_cg2ps"]
 script/source = "extends Node2D
@@ -33,3 +34,6 @@ curve = SubResource("Curve2D_gl6un")
 [node name="PathFollow2D" parent="Path2D" unique_id=202032653 instance=ExtResource("1_iukft")]
 position = Vector2(122, 384)
 rotation = -0.45687786
+
+[node name="Node2D" parent="." unique_id=1494701561 instance=ExtResource("2_gl6un")]
+position = Vector2(567, 298)

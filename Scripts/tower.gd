@@ -2,7 +2,10 @@
 
 extends Node2D
 
+class_name Tower
+
 var can_attack:bool = true
+var enemy_in_range:bool = false
 
 @export var damage:int
 @export var attack_speed:float
@@ -29,7 +32,7 @@ func attack() -> void:
 #Try to attack the enemy
 func attack_enemy() -> void:
 	#Check if attack cooldown is done
-	if can_attack:
+	if can_attack and enemy_in_range:
 		can_attack = false
 		
 		attack()
@@ -56,10 +59,13 @@ func target_enemy() -> void:
 	#Populate list with all the enemies in range
 	for area:Area2D in attack_hitbox.get_overlapping_areas():
 		if area.get_parent() is Enemy:
-			enemies.append(area)
+			enemies.append(area.get_parent())
 	
 	#Check if there are any enemies
 	if enemies:
+		
+		enemy_in_range = true
+		
 		match targeting:
 			"DEFAULT":
 				#Iterate through the enemies, looking for the one with the highest progress in the paths
@@ -93,6 +99,9 @@ func target_enemy() -> void:
 				
 				#Rotate towards the enemy
 				look_at(targeted_enemy.global_position)
+	else:
+		#Prevents the tower from shooting if there are no enemies in range
+		enemy_in_range = false
 						
 		
 	
