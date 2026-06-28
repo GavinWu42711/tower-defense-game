@@ -10,6 +10,8 @@ class_name Bullet
 @export var speed:int
 @export var hitbox:Area2D
 
+var upgrades:Array[BulletUpgrade] = []
+
 #Each enemy can only be hit once by each bullet
 var enemies_hit:Array[Area2D] = []
 
@@ -19,6 +21,7 @@ signal start_timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	apply_upgrades()
 	start_timer.connect(despawn_timer)
 	start_timer.emit()
 
@@ -29,6 +32,14 @@ func _process(delta: float) -> void:
 		enemy_hit()
 	else:
 		die()
+
+#Applies the upgrades the bullet has to the bullet
+func apply_upgrades() -> void:
+	for upgrade:BulletUpgrade in upgrades:
+		damage += upgrade.damage
+		lifespan += upgrade.lifespan
+		pierce += upgrade.pierce
+		speed += upgrade.speed
 
 #Despawns the bullet
 func die() -> void:
